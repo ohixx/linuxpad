@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=LinuxPad
+Comment=Simple soundboard for Linux
+Exec=linuxpad
+Icon=audio-card
+Terminal=false
+Type=Application
+Categories=Audio;AudioVideo;
+Keywords=sound;soundboard;audio;
