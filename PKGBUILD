@@ -1,10 +1,10 @@
 pkgname=linuxpad
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Simple Soundpadik for linux pipiware (pipitka nahuy)"
+pkgdesc="Simple soundboard for Linux with PipeWire support"
 arch=('any')
 url="https://github.com/ohixx/linuxpad"
-license=('MIT')
+license=('GPL3')
 depends=(
     'python'
     'python-pyqt6'
@@ -14,12 +14,13 @@ depends=(
 optdepends=(
     'python-pynput: Global hotkey support'
 )
-source=("$pkgname-$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ohixx/linuxpad/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('SKIP')
 
 package() {
     cd "$srcdir/$pkgname-$pkgver"
-
     install -Dm755 linuxpad.py "$pkgdir/usr/bin/linuxpad"
     install -Dm644 linuxpad.desktop "$pkgdir/usr/share/applications/linuxpad.desktop"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+EOF
